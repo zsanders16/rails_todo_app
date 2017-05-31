@@ -1,0 +1,23 @@
+<h1>TODO List</h1>
+<hr>    
+
+
+<br>
+<ol>
+<% if @descriptions.empty? %>
+    <p>You have no TODO items.</p>
+<% else %>
+    <% @descriptions.each do |description| %>
+        <li>
+            <%= link_to description.description, description_path(description) %>
+            <span> --- </span>
+            <%= link_to 'Edit', edit_description_path(description) %>
+            <span> --- </span>
+            <%= link_to 'Delete', description_path(description), method: :delete  %>
+        </li>
+    <% end %>
+<% end %>
+</ol>
+
+<br>
+<%= link_to 'Create New TODO', new_description_path %>

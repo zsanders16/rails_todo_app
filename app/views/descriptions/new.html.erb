@@ -1,0 +1,11 @@
+<h1>Create a new TODO item</h1>
+<hr>    
+
+<%= form_for @description  do |f| %> 
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br>
+    <%= f.submit %>
+    <br>
+    <span><%= link_to 'Back to List', descriptions_path %></span>
+<% end %>
